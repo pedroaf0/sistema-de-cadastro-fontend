@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  
+</head>
+<body>
+    
+<nav class="navbar navbar-light bg-light justify-content-between up">
+    <a class="navbar-brand" href="#">
+      <img src="logo_cti.png" height="30" class="d-inline-block align-top" alt="">
+    </a>
+    <button class="btn btn-outline-success my-5 my-sm-5 navup"><i class='fas fa-home' style='font-size:20px'></i> home </button>
+    <button style="float: right;" class="btn btn-outline-success my-5 my-sm-5 navup"><i class="fas fa-sign-out-alt" style='font-size:20px'></i> Sair </button>
+</nav>
+
+<div class="container upp">
+  <h2>Sistema de cadastro</h2>
+  <ul class="nav nav-tabs">
+    <li class="active"><a data-toggle="tab" href="#Documentação">Documentação</a></li>
+    <li><a data-toggle="tab" href="#Endereço">Endereço</a></li>
+    <li><a data-toggle="tab" href="#Identificação">Identificação</a></li>
+    <li><a data-toggle="tab" href="#Telefone-E-mail">Telefone/E-mail</a></li>
+  </ul>
+
+  <div class="tab-content">
+    <div id="Documentação" class="tab-pane fade in active">
+        <form>
+            <div class="form-group">
+              <label for="Nome">Nome</label>
+              <input type="text" class="form-control" id="Nome" placeholder="Nome">
+            </div>
+            <div class="form-group">
+              <label for="Data">Data Nascimento</label>
+              <input type="date" class="form-control" id="Data" >
+            </div>
+            <div class="form-group">
+                <label for="Sexo">Sexo</label>
+                <select class="form-control" id="Sexo">
+                  <option>Masculino</option>
+                  <option>Feminino</option>
+                </select>
+              </div>
+            <div class="form-group">
+                <label for="Estado-Civil">Estado Civil</label>
+                <select class="form-control" id="Estado-Civil">
+                  <option>Casado(a)</option>
+                  <option>Solteiro(a)</option>
+                </select>
+              </div>
+            <div class="form-group">
+                <label for="Escolaridade">Escolaridade</label>
+                <select class="form-control" id="Escolaridade">
+                  <option>PÓS-GRADUAÇÃO</option>
+                  <option>MESTRADO</option>
+                  <option>DOUTORADO</option>
+                  <option>PÓS-DOUTORADO</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="Pai">Filiação</label>
+                <input type="text" class="form-control" id="Pai" placeholder="Pai"><br>
+                <input type="text" class="form-control" id="Mãe" placeholder="Mãe">
+              </div>
+              <div class="form-group">
+                <label for="Cidade">Naturalidade</label>
+                <input type="text" class="form-control" id="Cidade" placeholder="Cidade"><br>
+                <input type="text" class="form-control" id="Nacionalidade" placeholder="Nacionalidade"><br>
+                <input type="text" class="form-control" id="Naturalizado" placeholder="Naturalizado">
+              </div>
+          </form>
+    </div>
+    <div id="Endereço" class="tab-pane fade">
+        <form>
+            <div class="form-group">
+              <label for="CPF">CPF</label>
+              <input type="number" class="form-control" id="CPF" placeholder="CPF">
+            </div>
+            <div class="form-group">
+              <label for="Numero-identidade">RG</label>
+              <input type="number" class="form-control" id="Numero-identidade" placeholder="Numero identidade">
+            </div>
+            <div class="form-group">
+              <label for="Data-Expedição">Data Expedição</label>
+              <input type="date" class="form-control" id="Data-Expedição" >
+            </div>
+            <div class="form-group">
+                <label for="UF-Identidade">UF Identidade</label>
+                <input type="text" class="form-control" id="UF-Identidade" placeholder="UF Identidade">
+            </div>
+            <div class="form-group">
+                <label for="Órgão-Emissor">Órgão Emissor</label>
+                <input type="text" class="form-control" id="Órgão-Emissor" placeholder="Órgão Emissor">
+            </div>
+            <div class="form-group">
+                <label for="Título-Eleitor">Título Eleitor</label>
+                <input type="number" class="form-control" id="Título-Eleitor" placeholder="Título de Eleitor">
+            </div>
+            <div class="form-group">
+                <label for="Zona">Zona</label>
+                <input type="text" class="form-control" id="Zona" placeholder="Zona">
+            </div>
+            <div class="form-group">
+                <label for="Seção">Seção</label>
+                <input type="text" class="form-control" id="Seção" placeholder="Seção">
+            </div>
+            <div class="form-group">
+                <label for="UF-do-Título">UF do Título</label>
+                <input type="text" class="form-control" id="UF-do-Título" placeholder="UF do Título">
+            </div>
+            <div class="form-group">
+                <label for="Data-Emissão">Data Emissão</label>
+                <input type="date" class="form-control" id="Data-Emissão" >
+              </div>
+              <div class="form-group">
+                <label for="PIS/PASEP">PIS/PASEP</label>
+                <input type="text" class="form-control" id="PIS/PASEP" placeholder="PIS/PASEP">
+            </div>
+          </form>
+    </div>
+    <div id="Identificação" class="tab-pane fade">
+        <form>
+            <div class="form-group">
+                <label for="Endereço-Residencial">Endereço Residencial</label>
+                <input type="text" class="form-control" id="Endereço-Residencial" placeholder="Endereço Residencial">
+              </div>
+            <div class="form-group">
+                <label for="Endereço-Residencial">Número</label>
+                <input type="number" class="form-control" id="Número" placeholder="Número">
+              </div>
+            <div class="form-group">
+                <label for="Complemento">Complemento</label>
+                <input type="text" class="form-control" id="Complemento" placeholder="Complemento">
+              </div>
+            <div class="form-group">
+                <label for="Bairro">Bairro</label>
+                <input type="text" class="form-control" id="Bairro" placeholder="Bairro">
+              </div>
+            <div class="form-group">
+                <label for="CEP">CEP</label>
+                <input type="number" class="form-control" id="CEP" placeholder="CEP">
+              </div>
+            <div class="form-group">
+                <label for="Cidade">Cidade</label>
+                <input type="text" class="form-control" id="Cidade" placeholder="Cidade">
+              </div>
+        </form>
+    </div>
+    <div id="Telefone-E-mail" class="tab-pane fade">
+        <form>
+            <div class="form-group">
+                <label for="Telefone-Residencial">Telefone Residencial</label>
+                <input type="number" class="form-control" id="Telefone-Residencial" placeholder="Telefone Residencial">
+            </div>
+            <div class="form-group">
+                <label for="Telefone-Celular">Telefone Celular</label>
+                <input type="number" class="form-control" id="Telefone-Celular" placeholder="Telefone Celular">
+            </div>
+            <div class="form-group">
+                <label for="Email-Pessoal">Email Pessoal</label>
+                <input type="number" class="form-control" id="Email-Pessoal" placeholder="Email Pessoal">
+            </div>
+        </form>
+    </div>
+  </div>
+  <button type="submit" class="btn btn-primary submit">Enviar</button>
+
+</div>
+
+</body>
+</html>
