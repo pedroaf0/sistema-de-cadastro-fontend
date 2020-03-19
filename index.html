@@ -72,7 +72,11 @@
                 <input type="text" class="form-control" id="Mãe" placeholder="Mãe">
               </div>
               <div class="form-group">
-                <label for="Cidade">Naturalidade</label>
+                <label for="CEP">CEP</label>
+                <input oninput="cep(this)" type="number" class="form-control" id="CEP" placeholder="CEP">
+              </div>
+              <div class="form-group">
+                <label for="Cidade">Naturalidade</label>/
                 <input type="text" class="form-control" id="Cidade" placeholder="Cidade"><br>
                 <input type="text" class="form-control" id="Nacionalidade" placeholder="Nacionalidade"><br>
                 <input type="text" class="form-control" id="Naturalizado" placeholder="Naturalizado">
@@ -146,10 +150,6 @@
                 <input type="text" class="form-control" id="Bairro" placeholder="Bairro">
               </div>
             <div class="form-group">
-                <label for="CEP">CEP</label>
-                <input type="number" class="form-control" id="CEP" placeholder="CEP">
-              </div>
-            <div class="form-group">
                 <label for="Cidade">Cidade</label>
                 <input type="text" class="form-control" id="Cidade" placeholder="Cidade">
               </div>
@@ -175,6 +175,22 @@
   <button type="submit" class="btn btn-primary submit">Enviar</button>
 
 </div>
-
+<script>
+    function cep(this_){
+        console.log(this_.value.length);
+        if(this_.value.length == 8){
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                console.log(JSON.parse(this.responseText).city);
+                document.getElementById("Cidade").value = JSON.parse(this.responseText).city;
+                
+                }
+            };
+            xhttp.open("GET", "https://brasilapi.com.br/api/cep/v1/"+this_.value, true);
+            xhttp.send();
+        }
+    }
+</script>
 </body>
 </html>
