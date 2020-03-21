@@ -76,12 +76,12 @@
                 <input oninput="cep(this)" type="number" class="form-control" id="CEP" placeholder="CEP">
               </div>
               <div class="form-group">
-                  <label for="Cidade">Cidade</label>
-                  <input type="text" class="form-control" id="Cidade" placeholder="Cidade"><br>
-                  <label for="Nacionalidade">Nacionalidade</label>
-                  <input type="text" class="form-control" id="Nacionalidade" value="Brasileiro" placeholder="Nacionalidade"><br>
-                  <label for="Nacionalidade">Naturalizado</label>
-                  <select class="form-control" id="Escolaridade">
+              <label for="Cidade">Cidade</label>
+              <input type="text" class="form-control" id="Cidade" placeholder="Cidade"><br>
+              <label for="Nacionalidade">Nacionalidade</label>
+              <input type="text" class="form-control" id="Nacionalidade" value="Brasileiro" placeholder="Nacionalidade"><br>
+              <label for="Naturalizado">Naturalizado</label>
+              <select class="form-control" id="Naturalizado">
                     <option>sim</option>
                     <option>não</option>
                   </select>
@@ -90,10 +90,6 @@
     </div>
     <div id="Endereço" class="tab-pane fade">
         <form>
-            <div class="form-group">
-              <label for="CPF">CPF</label>
-              <input type="number" class="form-control" id="CPF" placeholder="CPF">
-            </div>
             <div class="form-group">
               <label for="Numero-identidade">RG</label>
               <input type="number" class="form-control" id="Numero-identidade" placeholder="Numero identidade">
@@ -172,22 +168,20 @@
             </div>
             <div class="form-group">
                 <label for="Email-Pessoal">Email Pessoal</label>
-                <input type="number" class="form-control" id="Email-Pessoal" placeholder="Email Pessoal">
+                <input type="email" class="form-control" id="Email-Pessoal" placeholder="Email Pessoal">
             </div>
         </form>
     </div>
   </div>
-  <button type="submit" class="btn btn-primary submit">Enviar</button>
+  <button onclick="submit()" type="submit" class="btn btn-primary submit">Enviar</button>
 
 </div>
 <script>
     function cep(this_){
-        console.log(this_.value.length);
         if(this_.value.length == 8){
             var xhttp = new XMLHttpRequest();
             xhttp.onreadystatechange = function() {
                 if (this.readyState == 4 && this.status == 200) {
-                console.log(JSON.parse(this.responseText).city);
                 document.getElementById("Cidade").value = JSON.parse(this.responseText).city;
                 
                 }
@@ -195,6 +189,20 @@
             xhttp.open("GET", "https://brasilapi.com.br/api/cep/v1/"+this_.value, true);
             xhttp.send();
         }
+    }
+    function submit(){
+        var inputs = document.getElementsByTagName("input");
+        var selects = document.getElementsByTagName("select");
+        var json = "{"
+        for(var i = 0;i < inputs.length || i < selects.length ;i++){
+           if(i < inputs.length){json += "\""+inputs[i].id+"\":\""+inputs[i].value+"\"";json += ",";}
+           if(i < selects.length){json += "\""+selects[i].id+"\":\""+selects[i].value+"\"";json += ",";}
+        }
+        json = json.substr(0,json.length - 1);
+        json += "}";
+        json = JSON.parse(json);
+        console.log(json);
+       // agora voce pode enviar esse json com todos os inputs desse formulario para onde quiser
     }
 </script>
 </body>
